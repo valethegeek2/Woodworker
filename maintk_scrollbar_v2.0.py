@@ -16,30 +16,6 @@ from PIL import ImageTk as ImgTk
 from PIL import Image as Img
 
 #Languages dictionaries
-gr = { 
-    'addFurn':'Βάλε έπιπλο',
-    'addMat':'Πρόσθεσε υλικό',
-    'addDim': 'Πρόσθεσε Διάσταση',
-    'changeImg':'Άλλαξε εικόνα',
-    'settings':'Ρυθμήσεις',
-    'edit': 'Μορφοποίηση',
-    'setngs_chng_lang':'Ελληνικά',
-    'chng_name':'Άλλαξε Ονομα'
-    
-}
-bg = {
-    'addFurn':'Добави шкаф',
-    'addMat':'Добави материал',
-    'addDim': 'Добави размер',
-    'changeImg':'Смени икона',
-    'settings':'Настройки',
-    'edit':'Измени',
-    'setngs_chng_lang':'Български',
-    'chng_name':'Άλλαξε Ονομα',
-    'chng_img':'Смени икона',
-    'print':'Print to bg pdf File',
-    'no_img_selected':'No bg image selected'
-}
 en = {
     'addFurn':'Add Furniture',
     'addMat':'Add Material',
@@ -69,23 +45,17 @@ default = {
 
 
 class Material:
-    #Instead of having linked lists and shit like that, i just create objects for each material
+    #Instead of having linked lists and stuff like that, i just create objects for each material
     #And add each dimension in the dimensions list
     #I will go with the Tabs method of design
     def __init__(self, rootFrame, **args):
         self.Id = 0
         self.matFrame = Frame(rootFrame, args)
-        #self.matFrame.bind("<ButtonPress-1>", lambda event=None: print('Hello'))
-        #self.Name = Entry(self.matFrame, state='normal')
-        #self.Name.bind('<Return>', lambda event=None: self.ed(self.Name.get(), self.Id))
-        #self.addDimensionBtn = Button(self.matFrame, text=default['addDim'], command=self.addDimension)
         self.dimLabel = Label(self.matFrame, text='Dimensions')
         self.qLabel = Label(self.matFrame, text='Quantity')
         self.xLabel = Label(self.matFrame, text='Width')
         self.yLabel = Label(self.matFrame, text='Height')
         self.Dimensions = []
-        #self.Name.grid(row=0, column=0, columnspan=3)
-        #self.addDimensionBtn.grid(row=0, column=1)
         self.dimLabel.grid(row=0, column=0, columnspan=3)
         self.qLabel.grid(row=1, column=0)
         self.xLabel.grid(row=1, column=1)
@@ -134,8 +104,6 @@ class Furniture():#Frame):
         self.mainFrame.config(args)
     def grid_removeF(self):
         self.mainFrame.grid_remove()
-    #def ed2(self, title, ID):
-    #    self.Ntbook.tab(ID, text=title)
     def setFocus(self, event=None):
         focus[0] = self.FurnID
 #End of class Furniture
